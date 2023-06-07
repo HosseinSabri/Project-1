@@ -1,0 +1,23 @@
+import paramiko
+
+def remote_shutdown(ip_address, username, password):
+    client = paramiko.SSHClient()
+    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    client.connect(ip_address, username=username, password=password)
+
+    stdin, stdout, stderr = client.exec_command("shutdown /s /t 0")
+
+    # بررسی خروجی و پیام خطا
+    if stderr.channel.recv_exit_status() != 0:
+        print("خطا در خاموش کردن کامپیوتر")
+    else:
+        print("کامپیوتر با موفقیت خاموش شد")
+
+    client.close()
+
+# مشخصات اتصال به کامپیوتر را وارد کنید
+ip_address = "آدرس_IP"
+username = "نام_کاربری"
+password = "رمز_عبور"
+
+remote_shutdown(ip_address, username, password)
