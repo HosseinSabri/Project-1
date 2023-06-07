@@ -1,0 +1,54 @@
+دستور کد GIT 	کاربری
+git --version	جهت بررسی و نشان دادن ورژن نسخه برنامه Git
+git status –short	جهت نشان دادن مختصر وضعیت  مخزن Git
+git help [command]	برای کمک گرفتن و راهنمایی کامل در مورد یک دستور
+git [command] -h	برای کمک گرفتن و راهنمایی بصورت مختصر در مورد یک دستور
+git config	برای پیکربندی اطلاعات کاربران و ویرایشگر
+git config --global user.name “Name”	ایجاد نام کاربر به یک سطح پیکربندی (system, global, local)
+git config user.email “Email Address”	ایجاد یا اختصاص یک ایمیل برای یک کاربر Git
+git config user.name	نمایش نام کاربر
+git config user.email	نمایش ایمیل اختصاص داده شده
+git config core.editor “Editor”	تعریف و مشخص کردن ویرایشگر دلخواه برای پیکربندی
+mkdir <Folder Name>	ایجاد یک فولدر
+cd <Folder Name>	وارد شدن به یک فولدر
+cd ..	خارج شدن از یک فولدر
+ls 	نمایش لیست همه فایل ها 
+ls -a	نمایش لیست همه فایل ها از جمله فایل های Hidden
+touch <Folder Name | File Name With Extention>	ایجاد یک فولدر خالی یا فایل خالی از محتویات + .نوع فایل
+rm -r <Folder Name | File Name With Extention>	برای پاک کردن فولدر حاوی محتویات و فایل 
+git staus	نمایش وضعیت فایل ها و فولدرها
+git staus -s	نمایش وضعیت فایل ها و فولدرها بصورت Modified یا staged
+git add <Folder Name | File Name With Extention>	ایجاد فایل و فولدر trackted و انتقال به  staging area
+git add .	انتقال همه فایل ها و فولدرهای working tree به staging area
+git commit –m “Add Massage For Git Log”	ایجاد پیام سیستمی و ارسال تمام تغییرات Commit به  Loc/Rep 
+git log	نمایش مشخصات کامل تاریخچه همه Commit های ایجاد شده
+git log --oneline	نمایش لیست خلاصه تاریخچه همه Commit های ایجاد شده
+git log --oneline -#	نمایش خلاصه تک خطی تاریخچه Commit های ایجاد شده
+git log --oneline -<Show Number Final Commit>	نمایش مشخصات آخرین و جدیدترین تعداد Commit ایجاد شده 
+	git init --bare  	فراخوانی یک مخزن از راه دور ایجاد شده
+]  نام پروژه محلی [  < آدرس URL مخزن راه دورgit clone  < 	ایجاد یک کپی محلی از یک مخزن راه دور
+git remote -v  	نمایش اطلاعات دسترسی به مخازن راه دور مرتبط با مخزن محلی
+< URLمخزن راه دور>  <نام فایل یا فولدر>  git remote add 	اضافه کردن فایل یا فولدر از یک مخزن راه دور 
+git push -u <شاخه اصلی>  <نام یا لینک مخزن محلی>	نسخ یک شاخه را به یک مخزن راه دور منتقل می کند
+git log --oneline --graph
+	نمایش نمودار یا گراف نسخ مختلف در شاخه اصلی
+echo  "یک محتوا جدید"(نام فایل و نوع آن)	ایجاد محتویات در یک فایل
+git hash-object (نام فایل و نوع آن)	ایجاد و نمایش SHA-1 یک فایل
+git log	نمایش نسخه کامل تاریخچه و SHA-1
+git log --oneline	نمایش نسخه فشرده و کوتاه تاریخچه و SHA-1
+git show (SHA-1 Shortened ID)	نمایش نسخه کامل تاریخچه فراخوانی با ID 4 کاراکتری SHA-1
+git show HEAD	نمایش SHA-1 و تغییرات اعمال شده و زمان و نام ویرایش کننده
+cd .git 	نمایش فایل هایی شبیه به ref ، head بعد از دستور ls –a و نمایش .git/
+cd .git/refs/heads/     دستور     <<     cat master	ایجاد و نمایش SHA-1 کامل
+cd .git/                          دستور     <<      cat HEAD	نمایش فایل مرجع با نام HEAD و مسیر آن 
+git show HEAD~1       یا    git show HEAD~~       	نمایش مشخصات کامل فایل والد با مشخص کردن والد مربوطه
+git show MASTER~2  یا    git show 6260263~~       	نمایش مشخصات کامل فایل با SHA-1 مشخص کردن لاین مربوطه
+git show HEAD^1       یا    git show HEAD^^       	نمایش مشخصات کامل فایل Merge با مشخص کردن والدین مربوطه
+git show MASTER^  	نمایش مشخصات کامل فایل با SHA-1 مشخص کردن لاین مربوطه
+git show master~0  	نمایش مشخصات کامل HEAD Master
+git show head^0       	نمایش مشخصات کامل HEAD Master
+git tag <tag name> head^	ایجاد تگ برای یک Commit مشخص
+git tag -a -m "یک پیام برای یک نسخه" <نام تگ>	ایجاد تگ برای یک Commit 
+git tag -a -F "include feature 1" Ver.04	ایجاد تگ برای یک Commit 
+git show ver.04	نمایش پیام برای یک تگ (مرحله بالا)
+
