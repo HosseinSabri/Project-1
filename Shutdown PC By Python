@@ -1,0 +1,29 @@
+import ctypes
+import sys
+
+# تابعی برای خاموش کردن کامپیوتر
+def shutdown():
+    user32 = ctypes.windll.User32
+    user32.ExitWindowsEx(1, 0)
+
+# اطلاعات لازم برای تبدیل به exe
+if getattr(sys, 'frozen', False):
+    # در حال اجرا در محیط exe
+    exe_path = sys.executable
+else:
+    # در حال اجرا در محیط پایتون
+    import os
+    exe_path = os.path.abspath(__file__)
+
+# پیغام تایید خاموش کردن کامپیوتر
+print("آیا می‌خواهید کامپیوتر را خاموش کنید؟")
+choice = input("بله/خیر: ")
+
+if choice == "بله":
+    shutdown()
+else:
+    print("عملیات خاموش کردن کامپیوتر لغو شد.")
+
+# اگر از exe باشد، پس از خاموش کردن صفحه‌ای نمایش داده نمی‌شود.
+if getattr(sys, 'frozen', False):
+    input("برای خروج کلید Enter را فشار دهید...")
