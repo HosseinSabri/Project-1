@@ -51,4 +51,4 @@ git tag <tag name> head^	ایجاد تگ برای یک Commit مشخص
 git tag -a -m "یک پیام برای یک نسخه" <نام تگ>	ایجاد تگ برای یک Commit 
 git tag -a -F "include feature 1" Ver.04	ایجاد تگ برای یک Commit 
 git show ver.04	نمایش پیام برای یک تگ (مرحله بالا)
-
+fine
